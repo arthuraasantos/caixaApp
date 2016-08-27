@@ -26,7 +26,7 @@
         }).then(function (modal) {
             modal.element.modal();
             modal.close.then(function (result) {
-                $scope.exibirInformacao("Voce escolheu" + result);
+                exibirInformacao("Voce escolheu" + result);
             });
         });
     };

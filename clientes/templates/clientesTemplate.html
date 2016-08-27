@@ -6,7 +6,7 @@
                 <div class="col-md-1">
                     <label class="append-icon">
                         <button href="#" class="btn btn-primary btn-alt fs13 active-animation" data-effect="mfp-flipInX" ng-click="exibirModal('novoContato.html')">
-                            Criar contato  &nbsp;
+                            Criar cliente  &nbsp;
                             <i class="fa fa-plus right"></i>
                         </button>
                     </label>
@@ -65,38 +65,39 @@
                         <div class="panel heading-border panel-primary">
                             <div class="panel-body bg-light">
                                 <div class="section-divider mb40" id="spy1">
-                                    <span>Novo contato</span>
+                                    <span>Novo Cliente</span>
                                 </div>
-                                <form name="novoContato">
+                                <form name="novoContato" ng-submit="criarCliente()">
                                     <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="section">
-                                                <div class="form-group">
-                                                    <label>Tipo do contato: </label><br />
+                                        <label><strong>Tipo do cliente:</strong> </label>
+                                        <br />
+                                        <div class="section mv15">
+                                            <div class="option-group field">
+                                                <div class="col-md-4">
+                                                    <label class="option option-primary">
+                                                    <input type="checkbox" checked="checked" ng-model="novoCliente.tipoCliente">
+                                                    <span class="checkbox"></span>Cliente</label>
                                                 </div>
-                                                <div class="radio-custom square mb5">
-                                                    <div class="col-md-4 radio-custom square mb5">
-                                                        <input type="radio" id="tipoContatoCliente" name="tipoContato">
-                                                        <label for="tipoContato">Cliente</label>
-                                                    </div>
-                                                    <div class="col-md-4 radio-custom square mb5">
-                                                        <input type="radio" id="radioExample13" name="radioExample">
-                                                        <label for="tipoContato">Fornecedor</label>
-                                                    </div>
-                                                    <div class="col-md-4 radio-custom square mb5">
-                                                        <input type="radio" id="radioExample13" name="radioExample">
-                                                        <label for="tipoContato">Parceiro</label>
-                                                    </div>
+                                                <div class="col-md-4">
+                                                    <label class="option option-primary">
+                                                    <input type="checkbox" ng-model="novoCliente.tipoFornecedor">
+                                                    <span class="checkbox"></span>Fornecedor</label>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label class="option option-primary">
+                                                    <input type="checkbox" ng-model="novoCliente.tipoParceiro" >
+                                                    <span class="checkbox"></span>Parceiro</label>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <br>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="section">
                                                 <label class="field prepend-icon">
-                                                    <input type="text" name="firstname" id="firstname" class="gui-input" placeholder="Nome do contato">
-                                                    <label for="firstname" class="field-icon">
+                                                    <input type="text" class="gui-input" placeholder="Nome do contato" ng-model="novoCliente.nome" ng-required="true" >
+                                                    <label  class="field-icon">
                                                         <i class="fa fa-user"></i>
                                                     </label>
                                                 </label>
@@ -107,8 +108,8 @@
                                         <div class="col-md-12">
                                             <div class="section">
                                                 <label class="field prepend-icon">
-                                                    <input type="text" name="firstname" id="firstname" class="gui-input" placeholder="Email para contato">
-                                                    <label for="firstname" class="field-icon">
+                                                    <input type="text" class="gui-input" placeholder="Email para contato" ng-model="novoCliente.email">
+                                                    <label class="field-icon">
                                                         <i class="fa fa-envelope"></i>
                                                     </label>
                                                 </label>
@@ -119,8 +120,8 @@
                                         <div class="col-md-6">
                                             <div class="section">
                                                 <label class="field prepend-icon">
-                                                    <input type="text" name="firstname" id="firstname" class="gui-input" placeholder="Telefone">
-                                                    <label for="firstname" class="field-icon">
+                                                    <input type="text" class="gui-input" placeholder="Telefone" ng-model="novoCliente.telefone">
+                                                    <label class="field-icon">
                                                         <i class="fa fa-phone"></i>
                                                     </label>
                                                 </label>
@@ -129,24 +130,23 @@
                                         <div class="col-md-6">
                                             <div class="section">
                                                 <label class="field prepend-icon">
-                                                    <input type="text" name="firstname" id="firstname" class="gui-input" placeholder="Celular">
-                                                    <label for="firstname" class="field-icon">
+                                                    <input type="text" class="gui-input" placeholder="Celular" ng-model="novoCliente.celular">
+                                                    <label class="field-icon">
                                                         <i class="glyphicon glyphicon-phone"></i>
                                                     </label>
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <button type="submit" class="btn btn-success btn-alt btn-block fs13">
+                                                Criar contato  &nbsp;
+                                                <i class="fa fa-save"></i>
+                                            </button>
+                                        </div>
+                                    </div>                                    
                                 </form>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <button class="btn btn-success btn-alt btn-block fs13" ng-click="criarContato(novoContato)">
-                                            Criar contato  &nbsp;
-                                            <i class="fa fa-save"></i>
-                                        </button>
-                                    </div>
-
-                                </div>
                             </div>
                         </div>
                     </div>
